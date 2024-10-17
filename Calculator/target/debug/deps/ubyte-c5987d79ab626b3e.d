@@ -1,0 +1,11 @@
+C:\Users\alina\.venv\Scripts\Rust\lab1\hello_world\Calculator\target\debug\deps\libubyte-c5987d79ab626b3e.rmeta: C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\lib.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\arithmetic.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\byte_unit.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\parse.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\ser_de.rs
+
+C:\Users\alina\.venv\Scripts\Rust\lab1\hello_world\Calculator\target\debug\deps\libubyte-c5987d79ab626b3e.rlib: C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\lib.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\arithmetic.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\byte_unit.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\parse.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\ser_de.rs
+
+C:\Users\alina\.venv\Scripts\Rust\lab1\hello_world\Calculator\target\debug\deps\ubyte-c5987d79ab626b3e.d: C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\lib.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\arithmetic.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\byte_unit.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\parse.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\ser_de.rs
+
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\lib.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\arithmetic.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\byte_unit.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\parse.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ubyte-0.10.4\src\ser_de.rs:
