@@ -70,47 +70,44 @@
         }
     </style>
     <script>
-        let expression = '';
-
-        // Додаємо символ до виразу та відображаємо його на екрані
+        let expression = '';  // Stores the current input
+        let lastResult = null;  // Stores the last result to reuse it in new calculations
+    
+        // Append to the current expression or last result
         function appendToExpression(value) {
+            // If there's a last result and no new expression, start appending to it
+            if (lastResult !== null && expression === '') {
+                expression = lastResult.toString();  // Use last result as the base for the new expression
+            }
             expression += value;
             document.getElementById("display").innerText = expression;
         }
-
-        // Виконуємо обчислення
+    
+        // Perform the calculation
         async function calculate() {
-            if (expression === '') return;
             const response = await fetch(`/calculate?expression=${encodeURIComponent(expression)}`);
             const data = await response.json();
+    
+            // Update the display with the result or error
             document.getElementById("display").innerText = data.result ?? data.error;
-            expression = '';  // Очищуємо вираз після обчислення
+    
+            // Store the last result for future operations
+            if (data.result !== null) {
+                lastResult = data.result;
+            }
+    
+            // Reset expression for further operations
+            expression = '';
         }
-
-        // Очищаємо дисплей
+    
+        // Clear the display and reset everything
         function clearDisplay() {
             expression = '';
+            lastResult = null;
             document.getElementById("display").innerText = '';
         }
-
-        // Обробка введення з клавіатури
-        function handleKeyboardInput(event) {
-            const key = event.key;
-            if ((key >= '0' && key <= '9') || key === '+' || key === '-' || key === '*' || key === '/' || key === '.') {
-                appendToExpression(key);
-            } else if (key === 'Enter') {
-                calculate();
-            } else if (key === 'Backspace') {
-                expression = expression.slice(0, -1);
-                document.getElementById("display").innerText = expression;
-            } else if (key === 'Escape') {
-                clearDisplay();
-            }
-        }
-
-        // Додаємо прослуховувач події клавіатури після завантаження сторінки
-        window.addEventListener('keydown', handleKeyboardInput);
     </script>
+    
 </head>
 <body>
     <div class="calculator">

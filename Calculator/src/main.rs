@@ -1,8 +1,10 @@
 use rocket::serde::json::Json;
 use rocket::response::content::RawHtml;
+use rocket::State;
 use serde::Serialize;
 use std::fs;
 use std::str::FromStr;
+use std::sync::Mutex;
 use rocket::get;
 use rocket::routes;
 use rocket::launch;
@@ -23,34 +25,50 @@ fn index() -> Option<RawHtml<String>> {
 
 // Функція обробки запиту з виразом. Повертає JSON із результатом або повідомленням про помилку
 #[get("/calculate?<expression>")]
-fn calculate(expression: String) -> Json<CalcResult> {
+fn calculate(expression: String, last_result: &State<Mutex<Option<f64>>>) -> Json<CalcResult> {
+    let mut last_result = last_result.lock().unwrap();  // Забезпечуємо доступ до Mutex
+    let expression = expression.trim();  // Очищаємо введений вираз від пробілів
+
+    // Якщо вираз порожній і є останній результат, використовуємо його
+    if expression.is_empty() && last_result.is_some() {
+        return Json(CalcResult {
+            result: *last_result,  // Повертаємо останній результат
+            error: None,
+        });
+    }
+
     // Використовуємо eval_expression для обчислення введеного виразу
-    match eval_expression(&expression) {
+    match eval_expression(expression, *last_result) {
         // Якщо обчислення успішне
         Ok(result) => {
-            // Перевіряємо на випадки ділення на 0 або некоректних обчислень (NaN)
             if result.is_infinite() || result.is_nan() {
                 Json(CalcResult {
                     result: None,
-                    error: Some("Ділення на 0 неможливе".to_string()), // Повертаємо повідомлення про помилку
+                    error: Some("Ділення на 0 неможливе".to_string()),
                 })
             } else {
+                *last_result = Some(result);  // Зберігаємо результат для подальших обчислень
                 Json(CalcResult {
-                    result: Some(result), // Повертаємо результат
+                    result: Some(result),  // Повертаємо результат
                     error: None,
                 })
             }
         }
         // Якщо була помилка в обчисленні
         Err(e) => Json(CalcResult {
-            result: None, // Повертаємо None як результат
-            error: Some(e), // Повертаємо текст помилки
+            result: None,
+            error: Some(e),
         }),
     }
 }
 
 // Функція для розбору виразу і обчислення
-fn eval_expression(expression: &str) -> Result<f64, String> {
+fn eval_expression(expression: &str, last_result: Option<f64>) -> Result<f64, String> {
+    if expression.is_empty() {
+        // Якщо вираз порожній, використовуємо останній результат
+        return last_result.ok_or("Немає попереднього результату".to_string());
+    }
+
     // Розбиваємо вираз на токени (числа та оператори)
     let tokens = tokenize_expression(expression)?;
 
@@ -202,6 +220,7 @@ fn precedence(op: &str) -> i32 {
 #[launch]
 fn rocket() -> _ {
     rocket::build()
+        .manage(Mutex::new(None::<f64>)) // Створюємо стан для зберігання останнього результату з Mutex
         .mount("/", routes![index, calculate]) // Роутинг для головної сторінки та обчислень
         .mount("/static", rocket::fs::FileServer::from("static")) // Підключення статичних файлів
 }
