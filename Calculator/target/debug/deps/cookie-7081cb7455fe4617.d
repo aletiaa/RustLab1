@@ -1,0 +1,12 @@
+C:\Users\alina\OneDrive\Документы\GitHub\RustLab1\Calculator\target\debug\deps\libcookie-7081cb7455fe4617.rmeta: C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\lib.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\builder.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\parse.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\jar.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\delta.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\same_site.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\expiration.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\prefix.rs
+
+C:\Users\alina\OneDrive\Документы\GitHub\RustLab1\Calculator\target\debug\deps\cookie-7081cb7455fe4617.d: C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\lib.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\builder.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\parse.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\jar.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\delta.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\same_site.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\expiration.rs C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\prefix.rs
+
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\lib.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\builder.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\parse.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\jar.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\delta.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\same_site.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\expiration.rs:
+C:\Users\alina\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cookie-0.18.1\src\prefix.rs:
