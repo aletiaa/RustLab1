@@ -71,23 +71,45 @@
     </style>
     <script>
         let expression = '';
+
+        // Додаємо символ до виразу та відображаємо його на екрані
         function appendToExpression(value) {
             expression += value;
             document.getElementById("display").innerText = expression;
         }
 
+        // Виконуємо обчислення
         async function calculate() {
             if (expression === '') return;
             const response = await fetch(`/calculate?expression=${encodeURIComponent(expression)}`);
             const data = await response.json();
             document.getElementById("display").innerText = data.result ?? data.error;
-            expression = '';  // Reset expression after calculation
+            expression = '';  // Очищуємо вираз після обчислення
         }
 
+        // Очищаємо дисплей
         function clearDisplay() {
             expression = '';
             document.getElementById("display").innerText = '';
         }
+
+        // Обробка введення з клавіатури
+        function handleKeyboardInput(event) {
+            const key = event.key;
+            if ((key >= '0' && key <= '9') || key === '+' || key === '-' || key === '*' || key === '/' || key === '.') {
+                appendToExpression(key);
+            } else if (key === 'Enter') {
+                calculate();
+            } else if (key === 'Backspace') {
+                expression = expression.slice(0, -1);
+                document.getElementById("display").innerText = expression;
+            } else if (key === 'Escape') {
+                clearDisplay();
+            }
+        }
+
+        // Додаємо прослуховувач події клавіатури після завантаження сторінки
+        window.addEventListener('keydown', handleKeyboardInput);
     </script>
 </head>
 <body>
